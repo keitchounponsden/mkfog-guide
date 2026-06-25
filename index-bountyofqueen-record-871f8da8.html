@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>赏金女王 · 资料与查询页面</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f0f2f5;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding: 2rem 1.2rem;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(145deg, #ffffff, #f7f9fc);
+      border-radius: 28px;
+      padding: 2.8rem 2.2rem;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e4e9f0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      color: #0a1929;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #3d4f63;
+      max-width: 680px;
+      margin: 0 auto 1.2rem;
+      font-weight: 400;
+    }
+
+    .hero .tagline {
+      display: inline-block;
+      background: #eef2f6;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #2a3b4e;
+      border: 1px solid #d5dce6;
+    }
+
+    /* 分区卡片 */
+    .section-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem 2rem 2.2rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.02);
+    }
+
+    .section-card h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 1.4rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid #eef2f7;
+      color: #11212e;
+    }
+
+    .section-card h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 1.4rem 0 0.5rem;
+      color: #1f3246;
+    }
+
+    .section-card p {
+      margin-bottom: 0.9rem;
+      color: #2b3f54;
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+      margin-top: 0.2rem;
+    }
+
+    .feature-item {
+      background: #f8fafd;
+      padding: 1.2rem 1.4rem;
+      border-radius: 18px;
+      border: 1px solid #e4eaf2;
+      transition: box-shadow 0.15s;
+    }
+
+    .feature-item strong {
+      display: block;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: #0f263b;
+    }
+
+    .feature-item span {
+      font-size: 0.92rem;
+      color: #3f556b;
+    }
+
+    /* FAQ 摘要 */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .faq-q {
+      background: #f4f7fb;
+      padding: 1rem 1.2rem;
+      border-radius: 16px;
+      border-left: 4px solid #a0b7cf;
+    }
+
+    .faq-q .question {
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      font-size: 1rem;
+      color: #142a3e;
+    }
+
+    .faq-q .answer {
+      font-size: 0.92rem;
+      color: #3b5268;
+      line-height: 1.5;
+    }
+
+    .faq-cta {
+      margin-top: 1.4rem;
+      font-size: 0.95rem;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      margin-top: 2rem;
+      padding: 1.6rem 0 0.4rem;
+      border-top: 1px solid #dce2ec;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #3e5872;
+    }
+
+    .footer-links a {
+      color: #1d3a5a;
+      text-decoration: none;
+      border-bottom: 1px dotted #b0c3d8;
+    }
+
+    .footer-links a:hover {
+      border-bottom: 1px solid #1d3a5a;
+    }
+
+    .inline-link {
+      color: #1d3a5a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #b8c9de;
+      transition: 0.1s;
+    }
+
+    .inline-link:hover {
+      border-bottom: 1px solid #1d3a5a;
+    }
+
+    /* 响应式 */
+    @media (max-width: 780px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+      .hero {
+        padding: 2rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .grid-2col {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .section-card {
+        padding: 1.6rem;
+      }
+      .footer-links {
+        flex-direction: column;
+        gap: 0.6rem;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .section-card h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- hero -->
+  <div class="hero">
+    <h1>赏金女王 · 信息查询</h1>
+    <div class="sub">规则对照、版本记录与常用资料整理，方便日常快速检索延伸阅读。</div>
+    <div class="tagline">查询辅助 · 内容索引</div>
+  </div>
+
+  <!-- 优势区：日常查询场景 -->
+  <div class="section-card">
+    <h2>为什么需要对照资料页</h2>
+    <div class="grid-2col">
+      <div class="feature-item">
+        <strong>多版本数值对照</strong>
+        <span>不同活动周期或规则调整后，可快速对比关键参数，无需反复翻阅历史公告。</span>
+      </div>
+      <div class="feature-item">
+        <strong>术语与机制说明</strong>
+        <span>对奖励结构、触发条件等进行归纳整理，降低理解门槛，适合新参与用户查阅。</span>
+      </div>
+      <div class="feature-item">
+        <strong>上下文延伸阅读</strong>
+        <span>围绕主题整理关联资料，便于从单一页面展开进一步了解，节省检索成本。</span>
+      </div>
+      <div class="feature-item">
+        <strong>结构化的 FAQ 摘要</strong>
+        <span>集中常见疑问的简要解释，无需多次搜索即可获得初步概念。</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 说明区：从日常对照展开 -->
+  <div class="section-card">
+    <h2>内容说明与使用场景</h2>
+    <p>本页面以整理和对照为目的，围绕与 <a href="https://index-bountyofqueen.com" class="inline-link">赏金女王</a> 相关的规则、版本记录和常见疑问进行归纳。内容来源为公开资料与历史信息汇总，不构成任何操作建议。</p>
+    <p>适用场景包括：<br>
+      ① 快速回顾某一条款的具体表述；<br>
+      ② 横向对比不同时期的机制差异；<br>
+      ③ 将分散的说明集中在一处，方便标记和延伸查阅。</p>
+    <p>所有信息均为静态整理，建议以官方最新公告为最终依据。如需更完整的条目，可直接浏览 <a href="https://index-bountyofqueen.com" class="inline-link">赏金女王</a> 主站内容。</p>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="section-card">
+    <h2>FAQ 摘要 · 快速查阅</h2>
+    <div class="faq-list">
+      <div class="faq-q">
+        <div class="question">Q：奖励结算周期是固定的吗？</div>
+        <div class="answer">通常情况下按自然周或活动周期结算，具体区间以当期规则为准。部分特殊阶段会有临时调整，建议对照最新公告。</div>
+      </div>
+      <div class="faq-q">
+        <div class="question">Q：同一个机制是否存在多个版本？</div>
+        <div class="answer">是的，随着时间推移可能出现过参数调整或条款优化。本页面汇总了主要版本的变化摘要，方便快速比对。</div>
+      </div>
+      <div class="faq-q">
+        <div class="question">Q：延伸阅读指哪些内容？</div>
+        <div class="answer">包括但不限于相关术语解释、历史变更记录、外部参考文章等。旨在提供上下文，帮助理解条款背后的逻辑。</div>
+      </div>
+    </div>
+    <div class="faq-cta">
+      更多问题或需要详细条款，可前往 <a href="https://index-bountyofqueen.com" class="inline-link">赏金女王</a> 查阅完整信息。
+    </div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer-links">
+    <span>资料整合 · 仅供对照参考</span>
+    <span><a href="https://index-bountyofqueen.com">赏金女王</a> — 主站内容以官方发布为准</span>
+  </div>
+
+</div>
+</body>
+</html>
