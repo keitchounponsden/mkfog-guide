@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品指南 · 赏金女王</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f2f5;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* 卡片式分区 */
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            padding: 2rem 1.8rem;
+            margin-bottom: 1.8rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        /* 首屏 Hero 区 — 简洁陈述 */
+        .hero {
+            text-align: center;
+            padding: 2.2rem 1.8rem 1.8rem;
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e9edf2;
+            box-shadow: 0 6px 14px rgba(0, 20, 40, 0.03);
+            margin-bottom: 1.8rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            color: #0b1d31;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #4b5a6b;
+            margin-top: 0.6rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 550;
+            margin-bottom: 1.1rem;
+            border-left: 5px solid #3867a0;
+            padding-left: 1rem;
+            color: #0b1d31;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.4rem;
+            margin-top: 0.5rem;
+        }
+
+        .feature-item {
+            background: #f7f9fc;
+            border-radius: 14px;
+            padding: 1.2rem 1.2rem 1.2rem 1.5rem;
+            border-left: 4px solid #b3c9e0;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            color: #1f3a5b;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #2c3f53;
+            margin: 0;
+        }
+
+        .advice-list {
+            list-style: none;
+            margin-top: 0.8rem;
+        }
+
+        .advice-list li {
+            background: #f7f9fc;
+            margin-bottom: 0.8rem;
+            padding: 0.9rem 1.2rem 0.9rem 1.6rem;
+            border-radius: 14px;
+            border-left: 4px solid #b3c9e0;
+            font-size: 0.98rem;
+        }
+
+        .advice-list li span {
+            font-weight: 550;
+            color: #1f3a5b;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e3e9f0;
+            padding: 1rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 550;
+            color: #0f2a47;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-a {
+            color: #2f4258;
+            font-size: 0.95rem;
+        }
+
+        .link-sentence {
+            background: #f3f6fa;
+            padding: 0.6rem 1rem;
+            border-radius: 40px;
+            display: inline-block;
+            font-size: 0.95rem;
+            color: #1d2e44;
+        }
+
+        .link-sentence a {
+            color: #1f5a8e;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #8baacd;
+        }
+
+        .link-sentence a:hover {
+            border-bottom-style: solid;
+            color: #0c3e68;
+        }
+
+        .note {
+            font-size: 0.9rem;
+            color: #4a5e74;
+            background: #f2f5f9;
+            padding: 1rem 1.3rem;
+            border-radius: 16px;
+            margin-top: 0.5rem;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            border: 1px solid #b7cbd9;
+            background: white;
+            color: #1f3a5b;
+            font-size: 0.9rem;
+            transition: 0.15s ease;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+
+        footer {
+            margin-top: 2.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6f7e8f;
+            border-top: 1px solid #daE2ec;
+            padding-top: 1.8rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Hero 摘要 -->
+    <div class="hero">
+        <h1>赏金女王 · 简明指南</h1>
+        <div class="sub">一款围绕策略与奖励设计的互动产品，适合希望了解机制、规划参与路径的用户。以下从亮点、使用建议到常见疑问提供一份参考说明。</div>
+    </div>
+
+    <!-- 产品亮点（卡片） -->
+    <div class="card">
+        <div class="section-title">功能结构概览</div>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>阶段式进程</strong>
+                <p>从初始任务到高阶挑战，层级递进，每个阶段提供不同的回报条件，适合循序渐进的参与者。</p>
+            </div>
+            <div class="feature-item">
+                <strong>奖励池分配</strong>
+                <p>基于完成度与达成顺序，系统依照既定算法分配奖励资源，透明度在界面中有明确说明。</p>
+            </div>
+            <div class="feature-item">
+                <strong>辅助信息面板</strong>
+                <p>提供实时进度追踪、历史记录以及规则索引，帮助使用者管理自己的参与策略。</p>
+            </div>
+            <div class="feature-item">
+                <strong>周期轮换内容</strong>
+                <p>任务主题与奖励结构随周期更新，保持一定的新鲜度与可重复探索性。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 使用建议：场景式 -->
+    <div class="card">
+        <div class="section-title">使用建议 · 从场景出发</div>
+        <ul class="advice-list">
+            <li><span>初次了解：</span> 建议先浏览规则说明和结算示例，明确各项指标的含义。不必急于投入，把界面每个板块点开看一遍，建立整体认知。</li>
+            <li><span>日常参与：</span> 设置固定的操作时段，并利用进度面板核对每日可完成的项目。合理分配时间，避免集中操作造成疲劳。</li>
+            <li><span>策略优化：</span> 观察阶段奖励的边际条件，有些奖励在特定顺序下效率更高。可以参考官方示例或社区中的合理讨论（但注意辨别）。</li>
+            <li><span>信息留存：</span> 对重要的规则更新或变动，建议截图或记录时间戳。后续若遇到疑问，可对照历史信息进行核对。</li>
+        </ul>
+        <div class="note">
+            💡 提示：任何产品的参与都应当基于自身判断。<strong>赏金女王</strong> 的规则以平台实时页面为准，本文档仅为通用性参考，不构成操作指引。
+        </div>
+    </div>
+
+    <!-- 访问提醒 + 自然链接 -->
+    <div class="card">
+        <div class="section-title">访问与提醒</div>
+        <p style="margin-bottom: 1rem;">
+            如果你希望进一步了解具体规则、当前周期内容以及账户相关功能，可直接访问 
+            <span class="link-sentence">
+                <a href="https://cnweb-bountyofqueen.com">赏金女王</a>
+            </span>
+            ， 平台界面提供了完整的条款、常见问题与实时数据。建议在熟悉规则后再进行任何实质性操作。
+        </p>
+        <p style="color: #2b4057;">
+            提醒：不轻信非官方渠道的“内部消息”“必中策略”，任何产品都存在概率与风险。注意保护个人账户信息，定期检查授权列表。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card">
+        <div class="section-title">常见问题摘要</div>
+        <div class="faq-item">
+            <div class="faq-q">Q: 是否需要注册才能查看规则？</div>
+            <div class="faq-a">大部分规则说明在公开页面可以查阅；部分个性化进度需要登录账户后才能显示。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q: 奖励结算是否有固定时间？</div>
+            <div class="faq-a">结算跟随周期设定，每个周期初页面会显示倒计时或日期。注意时区标注，避免误判。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q: 是否可以在移动设备上操作？</div>
+            <div class="faq-a">界面采用响应式设计，主流手机浏览器均可正常显示核心功能，部分复杂表格建议在宽屏下查看。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q: 遇到显示异常如何处理？</div>
+            <div class="faq-a">先尝试清除浏览器缓存或更换标准浏览器。若仍存在问题，可通过平台提供的反馈渠道描述现象。</div>
+        </div>
+    </div>
+
+    <!-- 再次嵌入链接（不重复感） -->
+    <div style="background: none; padding: 0.5rem 0 0.8rem 0; text-align: left;">
+        <span style="background: #eff2f6; padding: 0.3rem 1.2rem; border-radius: 30px; font-size: 0.9rem;">
+            📎 延伸参考：<a href="https://cnweb-bountyofqueen.com" style="color: #1f5a8e; text-decoration: none; border-bottom: 1px dotted #7c98b3;">赏金女王</a> 产品页面
+        </span>
+    </div>
+
+    <footer>
+        本篇介绍仅提供产品层面的信息梳理，不包含任何诱导性表述。请根据自身情况独立决策。<br>
+        © 内容参考 · 页面风格随本次方向调整
+    </footer>
+</div>
+</body>
+</html>
